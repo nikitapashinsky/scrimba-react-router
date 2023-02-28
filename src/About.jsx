@@ -10,9 +10,9 @@ function About({ title }) {
   return (
     <>
       <Nav />
-      <main className="space-y-8 p-6">
-        <img src="964-hero.jpg" />
-        <section className="max-w-md space-y-4">
+      <main className="mx-auto flex w-full max-w-3xl flex-col gap-8 p-6">
+        <img src="964-hero.jpg" className="" />
+        <section className="max-w-prose space-y-4">
           <h1 className="text-2xl font-bold">
             Competent point of contact for customers who own vintage cars or
             modern classic cars

@@ -12,7 +12,7 @@ function Home({ title }) {
     <>
       <Nav />
       <main>
-        <div className="flex flex-col">
+        <div className="flex flex-col md:grid md:grid-cols-2 xl:grid-cols-3">
           {cars.map((car) => {
             return (
               <div key={car.id} className="flex flex-col p-6">
