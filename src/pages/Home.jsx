@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import Nav from "../components/Nav";
-
 function Home({ title }) {
   useEffect(() => {
     document.title = title;
@@ -10,7 +8,6 @@ function Home({ title }) {
 
   return (
     <>
-      <Nav />
       <main className="flex flex-col items-center gap-8 p-6">
         <div className="flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-12 xl:grid-cols-3">
           <div>

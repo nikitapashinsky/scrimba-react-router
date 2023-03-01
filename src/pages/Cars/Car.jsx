@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Nav from "../components/Nav";
 
-function ModelDetail() {
+function Car() {
   const params = useParams();
   const [car, setCar] = useState(null);
 
@@ -18,7 +17,6 @@ function ModelDetail() {
 
   return (
     <>
-      <Nav />
       <main className="p-6">
         {car && (
           <div className="flex flex-col gap-4 xl:flex-row xl:gap-24">
@@ -62,4 +60,4 @@ function ModelDetail() {
   );
 }
 
-export default ModelDetail;
+export default Car;

@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 
-import Nav from "../components/Nav";
-
 function About({ title }) {
   useEffect(() => {
     document.title = title;
@@ -9,7 +7,6 @@ function About({ title }) {
 
   return (
     <>
-      <Nav />
       <main className="mx-auto flex w-full max-w-3xl flex-col gap-8 p-6 pb-20 md:pt-16 lg:gap-12">
         <section className="max-w-prose space-y-4">
           <h1 className="text-3xl font-bold tracking-tight md:text-5xl lg:mb-12">
