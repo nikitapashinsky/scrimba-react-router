@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import Nav from "./Nav";
+import Nav from "../components/Nav";
 
 function About({ title }) {
   useEffect(() => {
@@ -10,10 +10,10 @@ function About({ title }) {
   return (
     <>
       <Nav />
-      <main className="mx-auto flex w-full max-w-3xl flex-col gap-8 p-6">
+      <main className="mx-auto flex w-full max-w-3xl flex-col gap-8 p-6 pb-20 lg:gap-12 lg:pt-16">
         <img src="964-hero.jpg" className="" />
         <section className="max-w-prose space-y-4">
-          <h1 className="text-2xl font-bold">
+          <h1 className="text-3xl font-bold tracking-tighter md:text-5xl lg:mb-12">
             Competent point of contact for customers who own vintage cars or
             modern classic cars
           </h1>

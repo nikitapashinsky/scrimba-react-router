@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
-import Nav from "./Nav";
-import { cars } from "./data";
+import Nav from "../components/Nav";
+import { cars } from "../data";
 
 function Home({ title }) {
   useEffect(() => {

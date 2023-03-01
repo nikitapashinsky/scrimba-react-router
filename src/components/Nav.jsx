@@ -10,6 +10,9 @@ function Nav() {
         <Link to="/" className={`text-neutral-900 hover:underline`}>
           Home
         </Link>
+        <Link to="/models" className={`text-neutral-900 hover:underline`}>
+          Models
+        </Link>
         <Link to="/about" className="text-neutral-900 hover:underline">
           About
         </Link>
