@@ -12,20 +12,38 @@ function Home({ title }) {
     <>
       <Nav />
       <main className="flex flex-col items-center gap-8 p-6">
-        <div className="grid grid-cols-2 gap-6 md:gap-12 xl:grid-cols-3">
-          <img src="/718.webp" />
-          <img src="/911.webp" />
-          <img src="/panamera.webp" />
-          <img src="/taycan-hero.webp" />
-          <img src="/macan-hero.webp" />
-          <img src="/cayenne-hero.webp" />
+        <div className="flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-12 xl:grid-cols-3">
+          <div>
+            <img src="/718.webp" />
+            <h3 className="font-bold">Explore 718</h3>
+          </div>
+          <div>
+            <img src="/911.webp" />
+            <h3 className="font-bold">Explore 911</h3>
+          </div>
+          <div>
+            <img src="/panamera.webp" />
+            <h3 className="font-bold">Explore Panamera</h3>
+          </div>
+          <div>
+            <img src="/taycan-hero.webp" />
+            <h3 className="font-bold">Explore Taycan</h3>
+          </div>
+          <div>
+            <img src="/macan-hero.webp" />
+            <h3 className="font-bold">Explore Macan</h3>
+          </div>
+          <div>
+            <img src="/cayenne-hero.webp" />
+            <h3 className="font-bold">Explore Cayenne</h3>
+          </div>
         </div>
-        <Link
+        {/* <Link
           to="/models"
           className="border border-neutral-300 py-4 px-8 font-medium text-neutral-900"
         >
           Explore all models
-        </Link>
+        </Link> */}
       </main>
     </>
   );
