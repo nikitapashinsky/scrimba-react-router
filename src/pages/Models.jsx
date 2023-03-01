@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import Nav from "../components/Nav";
 
@@ -28,8 +29,10 @@ function Models({ title }) {
           {cars.map((car) => {
             return (
               <div key={car.id}>
-                <img src={`${car.img}.png`} />
-                <h3>{car.name}</h3>
+                <Link to={`/models/${car.id}`}>
+                  <img src={`/${car.img}.webp`} />
+                  <h3>{car.name}</h3>
+                </Link>
               </div>
             );
           })}
