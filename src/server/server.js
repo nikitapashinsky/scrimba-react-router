@@ -7,85 +7,244 @@ createServer({
 
   seeds(server) {
     server.create("car", {
-      id: "356",
-      name: "356",
-      yearFrom: 1948,
-      yearTo: 1965,
+      id: "718-cayman-t",
+      line: "718",
+      name: "718 Cayman T",
+      body: "Coupe",
+      seats: "2",
+      drive: "Rear wheel drive",
+      fuelType: "Gasoline",
       description:
         "The Modest Explorer is a car designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!",
-      img: "356.jpg",
+      img: "718-cayman-t",
     });
     server.create("car", {
-      id: "914",
-      name: "914",
-      yearFrom: 1970,
-      yearTo: 1976,
+      id: "718-cayman-gt4",
+      line: "718",
+      name: "718 Cayman GT4",
+      body: "Coupe",
+      seats: "2",
+      drive: "Rear wheel drive",
+      fuelType: "Gasoline",
+      description:
+        "The Modest Explorer is a car designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!",
+      img: "718-cayman-gt4",
+    });
+    server.create("car", {
+      id: "718-boxster-gts-4",
+      line: "718",
+      name: "718 Boxster GTS 4.0",
+      body: "Cabriolet",
+      seats: "2",
+      drive: "Rear wheel drive",
+      fuelType: "Gasoline",
+      description:
+        "The Modest Explorer is a car designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!",
+      img: "718-boxster-gts-4",
+    });
+    server.create("car", {
+      id: "911-carrera",
+      line: "911",
+      name: "911 Carrera",
+      body: "Coupe",
+      seats: "4-5",
+      drive: "Rear wheel drive",
+      fuelType: "Gasoline",
+      description:
+        "The Modest Explorer is a car designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!",
+      img: "911-carrera",
+    });
+    server.create("car", {
+      id: "911-carrera-4-gts",
+      line: "911",
+      name: "911 Carrera 4 GTS",
+      body: "Coupe",
+      seats: "4-5",
+      drive: "All wheel drive",
+      fuelType: "Gasoline",
+      description:
+        "The Modest Explorer is a car designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!",
+      img: "911-carrera-4-gts",
+    });
+    server.create("car", {
+      id: "911-carrera-gts-cabriolet",
+      line: "911",
+      name: "911 Carrera GTS Cabriolet",
+      body: "Cabriolet",
+      seats: "4-5",
+      drive: "All wheel drive",
+      fuelType: "Gasoline",
+      description:
+        "The Modest Explorer is a car designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!",
+      img: "911-carrera-gts-cabriolet",
+    });
+    server.create("car", {
+      id: "911-turbo-s",
+      line: "911",
+      name: "911 Turbo S",
+      body: "Coupe",
+      seats: "4-5",
+      drive: "All wheel drive",
+      fuelType: "Gasoline",
       description:
         "Beach Bum is a car inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
-      img: "914.jpg",
+      img: "911-turbo-s",
     });
     server.create("car", {
-      id: "928",
-      name: "928",
-      yearFrom: 1978,
-      yearTo: 1995,
+      id: "911-gt3",
+      line: "911",
+      name: "911 GT3",
+      body: "Coupe",
+      seats: "2",
+      drive: "Rear wheel drive",
+      fuelType: "Gasoline",
       description:
-        "Reliable Red is a car that was made for travelling. The inside is comfortable and cozy, with plenty of space to stretch out in. There's a small kitchen, so you can cook if you need to. You'll feel like home as soon as you step out of it.",
-      img: "928.jpg",
+        "Beach Bum is a car inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
+      img: "911-gt3",
     });
     server.create("car", {
-      id: "959",
-      name: "959",
-      yearFrom: 1987,
-      yearTo: 1988,
+      id: "911-gt3-rs",
+      line: "911",
+      name: "911 GT3 RS",
+      body: "Coupe",
+      seats: "2",
+      drive: "Rear wheel drive",
+      fuelType: "Gasoline",
       description:
-        "Dreamfinder is the perfect car to travel in and experience. With a ceiling height of 2.1m, you can stand up in this car and there is great head room. The floor is a beautiful glass-reinforced plastic (GRP) which is easy to clean and very hard wearing. A large rear window and large side windows make it really light inside and keep it well ventilated.",
-      img: "959.jpg",
+        "Beach Bum is a car inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
+      img: "911-gt3-rs",
     });
     server.create("car", {
-      id: "964",
-      name: "The Cruiser",
-      yearFrom: 1989,
-      yearTo: 1994,
+      id: "911-dakar",
+      line: "911",
+      name: "911 Dakar",
+      body: "Coupe",
+      seats: "2",
+      drive: "All wheel drive",
+      fuelType: "Gasoline",
       description:
-        "The Cruiser is a car for those who love to travel in comfort and luxury. With its many windows, spacious interior and ample storage space, the Cruiser offers a beautiful view wherever you go.",
-      img: "964.jpg",
+        "Beach Bum is a car inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
+      img: "911-dakar",
     });
     server.create("car", {
-      id: "993",
-      name: "911 (993)",
-      yearFrom: 1994,
-      yearTo: 1998,
+      id: "taycan-turbo",
+      line: "Taycan",
+      name: "Taycan Turbo",
+      body: "Sport Saloon",
+      seats: "4-5",
+      drive: "All wheel drive",
+      fuelType: "Electro",
       description:
-        "With this car, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.",
-      img: "993.jpg",
+        "Beach Bum is a car inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
+      img: "taycan-turbo",
     });
     server.create("car", {
-      id: "986",
-      name: "Boxster (986)",
-      yearFrom: 1997,
-      yearTo: 2004,
+      id: "taycan-turbo-s-cross-turismo",
+      line: "Taycan",
+      name: "Taycan Turbo S Cross Turismo",
+      body: "Cross Turismo",
+      seats: "4-5",
+      drive: "All wheel drive",
+      fuelType: "Electro",
       description:
-        "With this car, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.",
-      img: "986.jpg",
+        "Beach Bum is a car inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
+      img: "taycan-turbo-s-cross-turismo",
     });
     server.create("car", {
-      id: "996",
-      name: "911 (996)",
-      yearFrom: 1998,
-      yearTo: 2005,
+      id: "panamera-4s",
+      line: "Panamera",
+      name: "Panamera 4S",
+      body: "Sport Saloon",
+      seats: "4-5",
+      drive: "All wheel drive",
+      fuelType: "Gasoline",
       description:
-        "With this car, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.",
-      img: "996.jpg",
+        "Beach Bum is a car inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
+      img: "panamera-4s",
     });
     server.create("car", {
-      id: "980",
-      name: "Carrera GT",
-      yearFrom: 2003,
-      yearTo: 2006,
+      id: "panamera-turbo-s-ehybrid",
+      line: "Panamera",
+      name: "Panamera Turbo S E-Hybrid",
+      body: "Sport Saloon",
+      seats: "4-5",
+      drive: "All wheel drive",
+      fuelType: "Hybrid",
       description:
-        "With this car, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.",
-      img: "980.jpg",
+        "Beach Bum is a car inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
+      img: "panamera-turbo-s-ehybrid",
+    });
+    server.create("car", {
+      id: "panamera-turbo-s-sport-turismo",
+      line: "Panamera",
+      name: "Panamera Turbo S Sport Turismo",
+      body: "Sport Turismo",
+      seats: "4-5",
+      drive: "All wheel drive",
+      fuelType: "Gasoline",
+      description:
+        "Beach Bum is a car inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
+      img: "panamera-turbo-s-sport-turismo",
+    });
+    server.create("car", {
+      id: "macan",
+      line: "Macan",
+      name: "Macan",
+      body: "SUV",
+      seats: "4-5",
+      drive: "All wheel drive",
+      fuelType: "Gasoline",
+      description:
+        "Beach Bum is a car inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
+      img: "macan",
+    });
+    server.create("car", {
+      id: "cayenne-coupe",
+      line: "Cayenne",
+      name: "Cayenne Coupe",
+      body: "Coupe",
+      seats: "4-5",
+      drive: "All wheel drive",
+      fuelType: "Gasoline",
+      description:
+        "Beach Bum is a car inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
+      img: "cayenne-coupe",
+    });
+    server.create("car", {
+      id: "cayenne-turbo",
+      line: "Cayenne",
+      name: "Cayenne Turbo",
+      body: "SUV",
+      seats: "4-5",
+      drive: "All wheel drive",
+      fuelType: "Gasoline",
+      description:
+        "Beach Bum is a car inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
+      img: "cayenne-turbo",
+    });
+    server.create("car", {
+      id: "cayenne-turbo-s-ehybrid",
+      line: "Cayenne",
+      name: "Cayenne Turbo S E-Hybrid",
+      body: "SUV",
+      seats: "4-5",
+      drive: "All wheel drive",
+      fuelType: "Hybrid",
+      description:
+        "Beach Bum is a car inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
+      img: "cayenne-turbo-s-ehybrid",
+    });
+    server.create("car", {
+      id: "cayenne-turbo-gt",
+      line: "Cayenne",
+      name: "Cayenne Turbo GT",
+      body: "Coupe",
+      seats: "4-5",
+      drive: "All wheel drive",
+      fuelType: "Gasoline",
+      description:
+        "Beach Bum is a car inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
+      img: "cayenne-turbo-gt",
     });
   },
 
