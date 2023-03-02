@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 function Car() {
   const params = useParams();
@@ -7,8 +7,9 @@ function Car() {
 
   useEffect(() => {
     async function getData() {
-      const response = await fetch(`/api/models/${params.id}`);
+      const response = await fetch(`/api/cars/${params.model}/${params.id}`);
       const data = await response.json();
+      console.log(data);
       setCar(data.cars);
     }
 
@@ -25,9 +26,17 @@ function Car() {
             </div>
             <div className="flex flex-col gap-6 md:flex-row md:gap-16 xl:flex-col xl:gap-6 xl:pt-12 xl:pr-12">
               <div className="flex flex-col gap-4 md:w-1/2 lg:w-full xl:w-full xl:max-w-3xl">
-                <h1 className="text-3xl font-bold tracking-tight md:text-4xl xl:text-6xl">
-                  {car.name}
-                </h1>
+                <div className="space-y-1">
+                  <Link
+                    to={`/cars/${params.model}`}
+                    className="text-xs text-neutral-500 underline"
+                  >
+                    {params.model}
+                  </Link>
+                  <h1 className="text-3xl font-bold tracking-tight md:text-4xl xl:text-6xl">
+                    {car.name}
+                  </h1>
+                </div>
                 <p>{car.description}</p>
               </div>
               <div className="w-auto md:w-1/2 lg:w-full">

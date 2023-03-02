@@ -1,39 +1,52 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Home({ title }) {
-  useEffect(() => {
-    document.title = title;
-  }, []);
-
+function Home() {
   return (
     <>
-      <main className="flex flex-col items-center gap-8 p-6">
-        <div className="flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-12 xl:grid-cols-3">
-          <div>
+      <main className="flex flex-col items-center gap-8 p-6 text-neutral-900">
+        <div className="grid grid-cols-2 gap-8 md:grid md:grid-cols-2 md:gap-12 xl:grid-cols-3">
+          <Link
+            to="/cars/718"
+            className="flex flex-col items-center text-center"
+          >
             <img src="/718.webp" />
-            <h3 className="font-bold">Explore 718</h3>
-          </div>
-          <div>
+            <h3 className="font-bold">718</h3>
+          </Link>
+          <Link
+            to="/cars/911"
+            className="flex flex-col items-center text-center"
+          >
             <img src="/911.webp" />
-            <h3 className="font-bold">Explore 911</h3>
-          </div>
-          <div>
+            <h3 className="font-bold">911</h3>
+          </Link>
+          <Link
+            to="/cars/Panamera"
+            className="flex flex-col items-center text-center"
+          >
             <img src="/panamera.webp" />
-            <h3 className="font-bold">Explore Panamera</h3>
-          </div>
-          <div>
+            <h3 className="font-bold">Panamera</h3>
+          </Link>
+          <Link
+            to="/cars/Taycan"
+            className="flex flex-col items-center text-center"
+          >
             <img src="/taycan-hero.webp" />
-            <h3 className="font-bold">Explore Taycan</h3>
-          </div>
-          <div>
+            <h3 className="font-bold">Taycan</h3>
+          </Link>
+          <Link
+            to="/cars/Macan"
+            className="flex flex-col items-center text-center"
+          >
             <img src="/macan-hero.webp" />
-            <h3 className="font-bold">Explore Macan</h3>
-          </div>
-          <div>
+            <h3 className="font-bold">Macan</h3>
+          </Link>
+          <Link
+            to="/cars/Cayenne"
+            className="flex flex-col items-center text-center"
+          >
             <img src="/cayenne-hero.webp" />
-            <h3 className="font-bold">Explore Cayenne</h3>
-          </div>
+            <h3 className="font-bold">Cayenne</h3>
+          </Link>
         </div>
         {/* <Link
           to="/models"

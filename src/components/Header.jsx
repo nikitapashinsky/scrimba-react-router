@@ -11,17 +11,18 @@ function Nav() {
           Ferdinand
         </Link>
         <div className="flex items-center gap-4">
-          <Link to="/" className={`text-neutral-900 hover:underline`}>
+          {/* <Link to="/" className={`text-neutral-900 hover:underline`}>
             Home
-          </Link>
+          </Link> */}
           <Link to="/cars" className={`text-neutral-900 hover:underline`}>
-            Cars
+            All models
           </Link>
+          {/* <Link to="/about" className="text-neutral-900 hover:underline">
+            About
+          </Link> */}
+          <div className="block h-4 w-px bg-neutral-200"></div>
           <Link to="/account" className={`text-neutral-900 hover:underline`}>
             Account
-          </Link>
-          <Link to="/about" className="text-neutral-900 hover:underline">
-            About
           </Link>
         </div>
       </nav>

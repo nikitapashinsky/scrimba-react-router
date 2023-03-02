@@ -1,10 +1,6 @@
 import { useEffect } from "react";
 
-function About({ title }) {
-  useEffect(() => {
-    document.title = title;
-  }, []);
-
+function About() {
   return (
     <>
       <main className="mx-auto flex w-full max-w-3xl flex-col gap-8 p-6 pb-20 md:pt-16 lg:gap-12">

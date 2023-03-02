@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Cars from "./pages/Cars/Cars";
+import Model from "./pages/Cars/Model";
 import Car from "./pages/Cars/Car";
 import AccountLayout from "./components/AccountLayout";
 import Dashboard from "./pages/Account/Dashboard";
@@ -17,10 +18,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home title="Ferdinand" />} />
-          <Route path="about" element={<About title="About" />} />
-          <Route path="cars" element={<Cars title="Cars" />} />
-          <Route path="cars/:id" element={<Car />} />
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="cars" element={<Cars />} />
+          <Route path="cars/:model" element={<Model />} />
+          <Route path="cars/:model/:id" element={<Car />} />
           <Route path="account" element={<AccountLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="revenue" element={<Revenue />} />
