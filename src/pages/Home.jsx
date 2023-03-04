@@ -9,43 +9,43 @@ function Home() {
             to="/cars/718"
             className="flex flex-col items-center text-center"
           >
-            <img src="/718.webp" />
-            <h3 className="font-bold">718</h3>
+            <img src="/718-hero.webp" />
+            <h3 className="font-heading text-lg font-bold">718</h3>
           </Link>
           <Link
             to="/cars/911"
             className="flex flex-col items-center text-center"
           >
-            <img src="/911.webp" />
-            <h3 className="font-bold">911</h3>
+            <img src="/911-hero.webp" />
+            <h3 className="font-heading text-lg font-bold">911</h3>
           </Link>
           <Link
             to="/cars/Panamera"
             className="flex flex-col items-center text-center"
           >
-            <img src="/panamera.webp" />
-            <h3 className="font-bold">Panamera</h3>
+            <img src="/panamera-hero.webp" />
+            <h3 className="font-heading text-lg font-bold">Panamera</h3>
           </Link>
           <Link
             to="/cars/Taycan"
             className="flex flex-col items-center text-center"
           >
             <img src="/taycan-hero.webp" />
-            <h3 className="font-bold">Taycan</h3>
+            <h3 className="font-heading text-lg font-bold">Taycan</h3>
           </Link>
           <Link
             to="/cars/Macan"
             className="flex flex-col items-center text-center"
           >
             <img src="/macan-hero.webp" />
-            <h3 className="font-bold">Macan</h3>
+            <h3 className="font-heading text-lg font-bold">Macan</h3>
           </Link>
           <Link
             to="/cars/Cayenne"
             className="flex flex-col items-center text-center"
           >
             <img src="/cayenne-hero.webp" />
-            <h3 className="font-bold">Cayenne</h3>
+            <h3 className="font-heading text-lg font-bold">Cayenne</h3>
           </Link>
         </div>
         {/* <Link

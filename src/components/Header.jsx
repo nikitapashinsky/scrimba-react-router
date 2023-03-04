@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Nav() {
   return (
@@ -6,24 +6,45 @@ function Nav() {
       <nav className="flex w-full items-center justify-between gap-4">
         <Link
           to="/"
-          className="text-lg font-bold tracking-tight text-neutral-900"
+          className="font-heading text-lg font-bold text-neutral-900"
         >
           Ferdinand
         </Link>
-        <div className="flex items-center gap-4">
-          {/* <Link to="/" className={`text-neutral-900 hover:underline`}>
+        <div className="flex items-center gap-4 text-neutral-500">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "text-neutral-900 hover:underline"
+                : "hover:text-neutral-900 hover:underline"
+            }
+          >
             Home
-          </Link> */}
-          <Link to="/cars" className={`text-neutral-900 hover:underline`}>
+          </NavLink>
+          <NavLink
+            to="/cars"
+            className={({ isActive }) =>
+              isActive
+                ? "text-neutral-900 hover:underline"
+                : "hover:text-neutral-900 hover:underline"
+            }
+          >
             All models
-          </Link>
+          </NavLink>
           {/* <Link to="/about" className="text-neutral-900 hover:underline">
             About
           </Link> */}
           <div className="block h-4 w-px bg-neutral-200"></div>
-          <Link to="/account" className={`text-neutral-900 hover:underline`}>
+          <NavLink
+            to="/account"
+            className={({ isActive }) =>
+              isActive
+                ? "text-neutral-900 hover:underline"
+                : "hover:text-neutral-900 hover:underline"
+            }
+          >
             Account
-          </Link>
+          </NavLink>
         </div>
       </nav>
     </header>
