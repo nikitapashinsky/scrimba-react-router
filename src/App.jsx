@@ -13,8 +13,8 @@ import Dashboard from "./pages/Account/Dashboard";
 import Membership from "./pages/Account/Membership";
 import Concierge from "./pages/Account/Concierge";
 import MyCars from "./pages/Account/MyCars";
-import MyCarLayout from "./components/MyCarLayout";
 import MyCar from "./pages/Account/MyCar";
+import MyCarInfo from "./pages/Account/MyCarInfo";
 import MyCarPricing from "./pages/Account/MyCarPricing";
 import MyCarPhotos from "./pages/Account/MyCarPhotos";
 
@@ -33,8 +33,8 @@ function App() {
           <Route path="account" element={<AccountLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="cars" element={<MyCars />} />
-            <Route path="cars/:id" element={<MyCarLayout />}>
-              <Route index element={<MyCar />} />
+            <Route path="cars/:id" element={<MyCar />}>
+              <Route index element={<MyCarInfo />} />
               <Route path="pricing" element={<MyCarPricing />} />
               <Route path="photos" element={<MyCarPhotos />} />
             </Route>
