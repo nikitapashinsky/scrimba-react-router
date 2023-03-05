@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, ScrollRestoration } from "react-router-dom";
 
 function Home() {
   return (
@@ -55,6 +55,7 @@ function Home() {
           Explore all models
         </Link> */}
       </main>
+      <ScrollRestoration />
     </>
   );
 }

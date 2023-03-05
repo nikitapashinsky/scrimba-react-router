@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams, Link, NavLink, Outlet } from "react-router-dom";
+import {
+  useParams,
+  Link,
+  NavLink,
+  Outlet,
+  useSearchParams,
+} from "react-router-dom";
 
 export default function MyCar() {
   const params = useParams();
@@ -44,6 +50,7 @@ export default function MyCar() {
                   ? "cursor-default rounded-md bg-neutral-100 px-2 py-1 text-neutral-900"
                   : "rounded-md px-2 py-1 hover:text-neutral-900 hover:underline"
               }
+              preventScrollReset={true}
             >
               Overview
             </NavLink>
@@ -54,6 +61,7 @@ export default function MyCar() {
                   ? "cursor-default rounded-md bg-neutral-100 px-2 py-1 text-neutral-900"
                   : "rounded-md px-2 py-1 hover:text-neutral-900 hover:underline"
               }
+              preventScrollReset={true}
             >
               Pricing
             </NavLink>
@@ -64,6 +72,7 @@ export default function MyCar() {
                   ? "cursor-default rounded-md bg-neutral-100 px-2 py-1 text-neutral-900"
                   : "rounded-md px-2 py-1 hover:text-neutral-900 hover:underline"
               }
+              preventScrollReset={true}
             >
               Photos
             </NavLink>

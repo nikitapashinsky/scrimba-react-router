@@ -1,4 +1,9 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
 
 import "@fontsource/inter/variable.css";
 
@@ -20,31 +25,31 @@ import MyCarPhotos from "./pages/Account/MyCarPhotos";
 
 import "./server/server.js";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="cars" element={<Cars />} />
-          <Route path="cars/:model" element={<Model />} />
-          <Route path="cars/:model/:id" element={<Car />} />
-          <Route path="account" element={<AccountLayout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="cars" element={<MyCars />} />
-            <Route path="cars/:id" element={<MyCar />}>
-              <Route index element={<MyCarInfo />} />
-              <Route path="pricing" element={<MyCarPricing />} />
-              <Route path="photos" element={<MyCarPhotos />} />
-            </Route>
-            <Route path="concierge" element={<Concierge />} />
-            <Route path="membership" element={<Membership />} />
-          </Route>
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route element={<Layout />}>
+      <Route path="/" element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="cars" element={<Cars />} />
+      <Route path="cars/:model" element={<Model />} />
+      <Route path="cars/:model/:id" element={<Car />} />
+      <Route path="account" element={<AccountLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="cars" element={<MyCars />} />
+        <Route path="cars/:id" element={<MyCar />}>
+          <Route index element={<MyCarInfo />} />
+          <Route path="pricing" element={<MyCarPricing />} />
+          <Route path="photos" element={<MyCarPhotos />} />
         </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+        <Route path="concierge" element={<Concierge />} />
+        <Route path="membership" element={<Membership />} />
+      </Route>
+    </Route>
+  )
+);
+
+function App() {
+  return <RouterProvider router={router}></RouterProvider>;
 }
 
 export default App;

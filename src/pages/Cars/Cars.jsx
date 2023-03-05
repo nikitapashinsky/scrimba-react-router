@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 function Cars() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [cars, setCars] = useState([]);
+
+  const modelFilter = searchParams.get("model");
 
   useEffect(() => {
     async function getData() {
@@ -10,9 +13,12 @@ function Cars() {
       const data = await response.json();
       setCars(data.cars);
     }
-
     getData();
   }, []);
+
+  const displayedCars = modelFilter
+    ? cars.filter((car) => car.model.toLowerCase() === modelFilter)
+    : cars;
 
   return (
     <>
@@ -21,7 +27,7 @@ function Cars() {
           <h1 className="font-heading text-3xl font-bold">All models</h1>
         </div>
         <div className="flex flex-col gap-8 scroll-smooth md:grid md:grid-cols-2 xl:grid-cols-3">
-          {cars.map((car) => {
+          {displayedCars.map((car) => {
             return (
               <Link to={`/cars/${car.model}/${car.id}`} key={car.id}>
                 <img src={`/${car.img}.webp`} />
