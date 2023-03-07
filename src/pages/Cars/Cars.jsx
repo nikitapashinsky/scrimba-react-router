@@ -40,7 +40,7 @@ function Cars() {
       <main className="flex flex-col gap-12 scroll-smooth p-6 text-neutral-900">
         <div className="flex w-full flex-col gap-4">
           <h1 className="font-heading text-3xl font-bold">All models</h1>
-          <nav className="flex -translate-x-2 gap-2 text-sm font-medium">
+          <nav className="flex -translate-x-2 flex-wrap gap-2 text-sm font-medium">
             <FilterButton
               filter={modelFilter}
               handleClick={handleNewFilter}
@@ -59,7 +59,7 @@ function Cars() {
         <div className="flex flex-col gap-8 scroll-smooth md:grid md:grid-cols-2 xl:grid-cols-3">
           {displayedCars.map((car) => {
             return (
-              <Link to={`/cars/${car.model}/${car.id}`} key={car.id}>
+              <Link to={`/cars/${car.id}`} key={car.id}>
                 <img src={`/${car.img}.webp`} />
                 <h3 className="font-heading text-lg font-bold">{car.name}</h3>
               </Link>

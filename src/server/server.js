@@ -444,12 +444,7 @@ createServer({
       return schema.cars.all();
     });
 
-    this.get("/cars/:model", (schema, request) => {
-      const model = request.params.model;
-      return schema.cars.find(model);
-    });
-
-    this.get("/cars/:model/:id", (schema, request) => {
+    this.get("/cars/:id", (schema, request) => {
       const id = request.params.id;
       return schema.cars.find(id);
     });

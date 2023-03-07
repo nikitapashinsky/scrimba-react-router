@@ -11,7 +11,6 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Cars from "./pages/Cars/Cars";
-import Model from "./pages/Cars/Model";
 import Car from "./pages/Cars/Car";
 import AccountLayout from "./components/AccountLayout";
 import Dashboard from "./pages/Account/Dashboard";
@@ -31,8 +30,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="cars" element={<Cars />} />
-      <Route path="cars/:model" element={<Model />} />
-      <Route path="cars/:model/:id" element={<Car />} />
+      <Route path="cars/:id" element={<Car />} />
       <Route path="account" element={<AccountLayout />}>
         <Route index element={<Dashboard />} />
         <Route path="cars" element={<MyCars />} />

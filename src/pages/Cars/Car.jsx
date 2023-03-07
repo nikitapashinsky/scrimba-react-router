@@ -7,7 +7,7 @@ function Car() {
 
   useEffect(() => {
     async function getData() {
-      const response = await fetch(`/api/cars/${params.model}/${params.id}`);
+      const response = await fetch(`/api/cars/${params.id}`);
       const data = await response.json();
       console.log(data);
       setCar(data.cars);
@@ -27,10 +27,11 @@ function Car() {
             <div className="flex flex-col gap-6 md:flex-row md:gap-16 xl:flex-col xl:gap-6 xl:pt-12 xl:pr-12">
               <div className="flex flex-col gap-4 md:w-1/2 lg:w-full xl:w-full xl:max-w-3xl xl:gap-8">
                 <div className="space-y-1">
-                  <Link to={`/cars/${params.model}`} className="group text-xs">
-                    <span className="group-hover:underline">
-                      {params.model}
-                    </span>{" "}
+                  <Link
+                    to={`/cars/?model=${car.model.toLowerCase()}`}
+                    className="group text-xs"
+                  >
+                    <span className="group-hover:underline">{car.model}</span>{" "}
                     <span className="text-neutral-400">/</span>
                   </Link>
                   <h1 className="font-heading text-3xl font-bold md:text-4xl xl:text-6xl">
