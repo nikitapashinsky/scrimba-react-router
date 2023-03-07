@@ -17,11 +17,11 @@ import AccountLayout from "./components/AccountLayout";
 import Dashboard from "./pages/Account/Dashboard";
 import Membership from "./pages/Account/Membership";
 import Concierge from "./pages/Account/Concierge";
-import MyCars from "./pages/Account/MyCars";
-import MyCar from "./pages/Account/MyCar";
-import MyCarInfo from "./pages/Account/MyCarInfo";
-import MyCarPricing from "./pages/Account/MyCarPricing";
-import MyCarPhotos from "./pages/Account/MyCarPhotos";
+import MyCars from "./pages/Account/MyCars/MyCars";
+import MyCar from "./pages/Account/MyCars/MyCar";
+import MyCarInfo from "./pages/Account/MyCars/MyCarInfo";
+import MyCarPricing from "./pages/Account/MyCars/MyCarPricing";
+import MyCarPhotos from "./pages/Account/MyCars/MyCarPhotos";
 
 import "./server/server.js";
 
