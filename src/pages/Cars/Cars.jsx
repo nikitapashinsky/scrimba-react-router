@@ -58,7 +58,11 @@ function Cars() {
       <div className="flex flex-col gap-8 md:grid md:grid-cols-2 xl:grid-cols-3">
         {displayedCars.map((car) => {
           return (
-            <Link to={car.id} key={car.id}>
+            <Link
+              to={car.id}
+              state={{ filter: searchParams.toString() }}
+              key={car.id}
+            >
               <img src={`/${car.img}.webp`} />
               <h3 className="font-heading text-lg font-bold">{car.name}</h3>
             </Link>
