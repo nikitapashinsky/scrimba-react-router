@@ -15,19 +15,18 @@ export default function MyCars() {
   }, []);
 
   return (
-    <div className="p-6">
-      <h1>Your listed cars</h1>
+    <section className="p-6">
       <div className="flex flex-col gap-8 md:grid md:grid-cols-2 xl:grid-cols-3">
         {myCars &&
           myCars.map((car) => {
             return (
-              <Link to={`/account/cars/${car.id}`}>
+              <Link to={car.id}>
                 <img src={`/${car.id}.webp`} />
                 <h3 className="font-heading text-lg font-bold">{car.name}</h3>
               </Link>
             );
           })}
       </div>
-    </div>
+    </section>
   );
 }

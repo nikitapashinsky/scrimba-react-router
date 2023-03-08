@@ -1,19 +1,17 @@
 export default function Footer() {
   return (
-    <footer className="sticky top-[100vh] mt-12 space-y-4 border-t border-neutral-200 p-6 pt-12 pb-8">
-      <div className="max-w-prose space-y-4">
-        <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-900">
-          Disclaimer
-        </h4>
-        <p className="max-w-prose text-xs leading-normal text-neutral-500">
+    <footer className="sticky top-[100vh] mt-12 space-y-4 border-t border-neutral-100 px-6 py-12 text-sm">
+      <div className="max-w-prose space-y-2">
+        <h4 className="font-medium">Ferdinand</h4>
+        <p className="max-w-prose text-xs leading-normal text-neutral-600">
           This is a student project for the{" "}
           <a
             href="https://scrimba.com/learn/reactrouter6"
-            className="underline"
+            className="underline decoration-neutral-300 underline-offset-2"
           >
             Learn React Router 6
           </a>{" "}
-          course. Ferdinand is&nbsp;not affiliated with Porsche AG in any way.
+          course, and is not affiliated with Porsche AG in any way.
         </p>
       </div>
       <p className="max-w-prose text-xs text-neutral-400">

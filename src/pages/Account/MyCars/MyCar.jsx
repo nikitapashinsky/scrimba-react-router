@@ -22,7 +22,7 @@ export default function MyCar() {
     getData();
   }, [params]);
   return (
-    <div className="p-6 text-neutral-900">
+    <section className="p-6">
       {currentCar && (
         <div className="flex flex-col gap-4 xl:flex-row xl:gap-24">
           <div className="xl:w-10/12">
@@ -41,14 +41,14 @@ export default function MyCar() {
               </div>
             </div>
           </div>
-          <nav className="flex -translate-x-2 gap-2 text-xs text-neutral-500">
+          <nav className="flex gap-3 text-xs text-neutral-500">
             <NavLink
               to="."
               end
               className={({ isActive }) =>
                 isActive
-                  ? "cursor-default rounded-md bg-neutral-100 px-2 py-1 text-neutral-900"
-                  : "rounded-md px-2 py-1 hover:text-neutral-900 hover:underline"
+                  ? "text-neutral-900 underline decoration-transparent underline-offset-2 transition-all hover:text-neutral-900 hover:underline hover:decoration-neutral-900/30"
+                  : "underline decoration-transparent underline-offset-2 transition-all hover:text-neutral-900 hover:underline hover:decoration-neutral-900/30"
               }
               preventScrollReset={true}
             >
@@ -58,8 +58,8 @@ export default function MyCar() {
               to="pricing"
               className={({ isActive }) =>
                 isActive
-                  ? "cursor-default rounded-md bg-neutral-100 px-2 py-1 text-neutral-900"
-                  : "rounded-md px-2 py-1 hover:text-neutral-900 hover:underline"
+                  ? "text-neutral-900 underline decoration-transparent underline-offset-2 transition-all hover:text-neutral-900 hover:underline hover:decoration-neutral-900/30"
+                  : "underline decoration-transparent underline-offset-2 transition-all hover:text-neutral-900 hover:underline hover:decoration-neutral-900/30"
               }
               preventScrollReset={true}
             >
@@ -69,8 +69,8 @@ export default function MyCar() {
               to="photos"
               className={({ isActive }) =>
                 isActive
-                  ? "cursor-default rounded-md bg-neutral-100 px-2 py-1 text-neutral-900"
-                  : "rounded-md px-2 py-1 hover:text-neutral-900 hover:underline"
+                  ? "text-neutral-900 underline decoration-transparent underline-offset-2 transition-all hover:text-neutral-900 hover:underline hover:decoration-neutral-900/30"
+                  : "underline decoration-transparent underline-offset-2 transition-all hover:text-neutral-900 hover:underline hover:decoration-neutral-900/30"
               }
               preventScrollReset={true}
             >
@@ -80,6 +80,6 @@ export default function MyCar() {
           <Outlet context={{ currentCar }} />
         </div>
       )}
-    </div>
+    </section>
   );
 }

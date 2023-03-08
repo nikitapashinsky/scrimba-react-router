@@ -18,7 +18,7 @@ function Car() {
 
   return (
     <>
-      <main className="p-6 text-neutral-900">
+      <section>
         {car && (
           <div className="flex flex-col gap-4 xl:flex-row xl:gap-24">
             <div className="xl:w-10/12">
@@ -65,7 +65,7 @@ function Car() {
             </div>
           </div>
         )}
-      </main>
+      </section>
     </>
   );
 }
