@@ -60,7 +60,7 @@ function Cars() {
           return (
             <Link
               to={car.id}
-              state={{ filter: searchParams.toString() }}
+              state={{ filter: searchParams.toString(), model: modelFilter }}
               key={car.id}
             >
               <img src={`/${car.img}.webp`} />

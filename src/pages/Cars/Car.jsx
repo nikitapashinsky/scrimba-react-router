@@ -6,11 +6,9 @@ function Car() {
   const [car, setCar] = useState(null);
   const location = useLocation();
   const filter = location.state && location.state.filter;
-  console.log(location);
 
   const path = filter ? `..?${filter}` : "..";
-  const backBtnText =
-    car && filter ? `Back to ${car.model}` : `Back to all models`;
+  const backBtnText = (location.state && location.state.model) || "all";
 
   useEffect(() => {
     async function getData() {
@@ -33,7 +31,7 @@ function Car() {
               relative="path"
               className="absolute flex -translate-x-2 gap-2 self-start rounded-md px-2 py-1 text-sm text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
             >
-              <span>←</span> <span>{backBtnText}</span>
+              <span>←</span> <span>Back to {backBtnText} models</span>
             </Link>
             <div className="xl:w-10/12">
               <img src={`/${car.img}.webp`} />
@@ -63,8 +61,8 @@ function Car() {
                 <h1 className="text-3xl font-bold md:text-4xl xl:text-6xl">
                   {car.name}
                 </h1>
+                <p className="mt-1">{car.description}</p>
               </div>
-              <p>{car.description}</p>
               <div className="w-auto md:w-1/2 lg:w-full">
                 <table className="w-full table-auto text-left text-sm">
                   <tbody className="divide-y-[1px] divide-neutral-200">
