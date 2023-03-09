@@ -22,7 +22,7 @@ export default function MyCars() {
             return (
               <Link to={car.id}>
                 <img src={`/${car.id}.webp`} />
-                <h3 className="font-heading text-lg font-bold">{car.name}</h3>
+                <h3 className="font-semibold">{car.name}</h3>
               </Link>
             );
           })}

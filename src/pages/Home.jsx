@@ -11,7 +11,7 @@ function Home() {
             className="flex flex-col items-center text-center"
           >
             <img src={`/${model.toLowerCase()}-hero.webp`} />
-            <h3 className="font-heading text-lg font-bold">{model}</h3>
+            <h3 className="font-semibold">{model}</h3>
           </Link>
         ))}
       </div>

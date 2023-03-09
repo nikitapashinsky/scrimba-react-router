@@ -4,10 +4,7 @@ function Nav() {
   return (
     <header className="sticky top-0 z-20 w-full border-b border-neutral-900/5 bg-white/95 bg-clip-padding p-4 px-6 text-sm backdrop-blur-md">
       <nav className="flex w-full items-center justify-between gap-4">
-        <Link
-          to="/"
-          className="font-heading text-lg font-bold text-neutral-900"
-        >
+        <Link to="/" className="font-medium text-neutral-900">
           Ferdinand
         </Link>
         <div className="flex items-center gap-4">

@@ -8,7 +8,6 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["InterVariable", ...defaultTheme.fontFamily.sans],
-        heading: ["Porsche Next"],
       },
     },
   },
