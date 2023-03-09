@@ -5,14 +5,14 @@ function Car() {
   const params = useParams();
   const [car, setCar] = useState(null);
   const location = useLocation();
+  const filterState = location.state && location.state.filter;
+  const modelState = location.state && location.state.model;
 
-  const filter = location.state && location.state.filter;
-  const model = location.state && location.state.model;
-
-  const path = filter ? `..?${filter}` : "..";
+  const path = filterState ? `..?${filterState}` : "..";
 
   const modelCapitalized =
-    location.state && model[0].toUpperCase() + model.slice(1);
+    modelState && modelState[0].toUpperCase() + modelState.slice(1);
+
   const backBtnText = (location.state && modelCapitalized) || "all";
 
   useEffect(() => {
