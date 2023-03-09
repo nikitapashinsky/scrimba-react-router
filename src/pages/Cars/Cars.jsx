@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-
+import { getData } from "../../api";
 import FilterButton from "../../components/FilterButton";
 
 function Cars() {
@@ -11,12 +11,11 @@ function Cars() {
   const models = [...new Set(cars.map((car) => car.model))];
 
   useEffect(() => {
-    async function getData() {
-      const response = await fetch("/api/cars");
-      const data = await response.json();
-      setCars(data.cars);
+    async function loadData() {
+      const data = await getData();
+      setCars(data);
     }
-    getData();
+    loadData();
   }, []);
 
   function handleNewFilter(key, value) {

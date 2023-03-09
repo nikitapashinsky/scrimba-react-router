@@ -4,7 +4,10 @@ export default function NotFound() {
   return (
     <section className="mx-auto flex h-full max-w-sm flex-col items-center justify-center gap-8 p-6 text-center">
       <div className="flex flex-col gap-2">
-        <h1 className="text-lg font-medium">This page doesn't exist.</h1>
+        <img src="/404.jpg" />
+        <h1 className="text-lg font-medium">
+          This <s className="text-neutral-400">car</s> page doesn't exist.
+        </h1>
         <p className="text-sm leading-normal text-neutral-500">
           Please check that the address you entered is correct. If you're sure
           this page should exist, please try again later.

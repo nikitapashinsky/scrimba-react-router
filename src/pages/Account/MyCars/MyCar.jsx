@@ -29,7 +29,7 @@ export default function MyCar() {
                   <span className="group-hover:underline">My Cars</span>{" "}
                   <span className="text-neutral-400">/</span>
                 </Link>
-                <h1 className="text-3xl font-bold md:text-4xl xl:text-6xl">
+                <h1 className="text-3xl font-bold tracking-tight md:text-4xl xl:text-6xl">
                   {currentCar.name}
                 </h1>
               </div>

@@ -440,8 +440,9 @@ createServer({
   routes() {
     this.namespace = "api";
 
-    this.get("/cars", (schema) => {
-      return schema.cars.all();
+    this.get("/cars", (schema, request) => {
+      return new Response(400, {}, { error: "Error fetching data" });
+      // return schema.cars.all();
     });
 
     this.get("/cars/:id", (schema, request) => {

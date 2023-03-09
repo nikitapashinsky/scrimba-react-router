@@ -64,7 +64,7 @@ function Car() {
                   </span>
                 </div>
                 <div className="flex flex-col gap-4">
-                  <h1 className="text-3xl font-bold md:text-4xl xl:text-6xl">
+                  <h1 className="text-3xl font-bold tracking-tight md:text-4xl xl:text-6xl">
                     {car.name}
                   </h1>
                   <p>{car.description}</p>
