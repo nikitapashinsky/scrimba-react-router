@@ -6,14 +6,28 @@ import FilterButton from "../../components/FilterButton";
 function Cars() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [cars, setCars] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   const modelFilter = searchParams.get("model");
 
-  const models = [...new Set(cars.map((car) => car.model))];
+  const models = [...new Set(cars?.map((car) => car.model))];
+
+  const displayedCars = modelFilter
+    ? cars.filter((car) => car.model.toLowerCase() === modelFilter)
+    : cars;
 
   useEffect(() => {
     async function loadData() {
-      const data = await getData();
-      setCars(data);
+      setLoading(true);
+      try {
+        const data = await getData();
+        setCars(data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
     }
     loadData();
   }, []);
@@ -30,9 +44,24 @@ function Cars() {
     });
   }
 
-  const displayedCars = modelFilter
-    ? cars.filter((car) => car.model.toLowerCase() === modelFilter)
-    : cars;
+  if (loading) {
+    return (
+      <section className="flex h-full flex-col items-center justify-center p-6">
+        <p className="text-sm text-neutral-500">Loading…</p>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="flex h-full flex-col items-center justify-center p-6">
+        <p className="max-w-sm text-center text-sm leading-normal text-neutral-500">
+          An error occurred while loading data. Please try refreshing the page,
+          or try again later.
+        </p>
+      </section>
+    );
+  }
 
   return (
     <section className="flex flex-col gap-12 p-6">
@@ -44,7 +73,7 @@ function Cars() {
             handleClick={handleNewFilter}
             model={null}
           />
-          {models.map((model) => (
+          {models?.map((model) => (
             <FilterButton
               key={model}
               filter={modelFilter}
@@ -55,7 +84,7 @@ function Cars() {
         </nav>
       </div>
       <div className="flex flex-col gap-8 md:grid md:grid-cols-2 xl:grid-cols-3">
-        {displayedCars.map((car) => {
+        {displayedCars?.map((car) => {
           return (
             <Link
               to={car.id}

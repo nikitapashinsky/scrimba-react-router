@@ -8,6 +8,7 @@ function Home() {
         {models.map((model) => (
           <Link
             to={`/cars?model=${model.toLowerCase()}`}
+            key={model}
             className="flex flex-col items-center text-center"
           >
             <img src={`/${model.toLowerCase()}-hero.webp`} />
