@@ -63,10 +63,12 @@ function Car() {
                     /
                   </span>
                 </div>
-                <h1 className="text-3xl font-bold md:text-4xl xl:text-6xl">
-                  {car.name}
-                </h1>
-                <p className="mt-1">{car.description}</p>
+                <div className="flex flex-col gap-4">
+                  <h1 className="text-3xl font-bold md:text-4xl xl:text-6xl">
+                    {car.name}
+                  </h1>
+                  <p>{car.description}</p>
+                </div>
               </div>
               <div className="w-auto md:w-1/2 lg:w-full">
                 <table className="w-full table-auto text-left text-sm">

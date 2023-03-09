@@ -1,11 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  useParams,
-  Link,
-  NavLink,
-  Outlet,
-  useSearchParams,
-} from "react-router-dom";
+import { useParams, Link, NavLink, Outlet } from "react-router-dom";
 
 export default function MyCar() {
   const params = useParams();

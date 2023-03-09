@@ -22,27 +22,32 @@ import MyCarInfo from "./pages/Account/MyCars/MyCarInfo";
 import MyCarPricing from "./pages/Account/MyCars/MyCarPricing";
 import MyCarPhotos from "./pages/Account/MyCars/MyCarPhotos";
 
+import NotFound from "./pages/404";
+
 import "./server/server.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<Layout />}>
-      <Route path="/" element={<Home />} />
-      <Route path="about" element={<About />} />
-      <Route path="cars" element={<Cars />} />
-      <Route path="cars/:id" element={<Car />} />
-      <Route path="account" element={<AccountLayout />}>
-        <Route index element={<Dashboard />} />
-        <Route path="cars" element={<MyCars />} />
-        <Route path="cars/:id" element={<MyCar />}>
-          <Route index element={<MyCarInfo />} />
-          <Route path="pricing" element={<MyCarPricing />} />
-          <Route path="photos" element={<MyCarPhotos />} />
+    <>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="cars" element={<Cars />} />
+        <Route path="cars/:id" element={<Car />} />
+        <Route path="account" element={<AccountLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="cars" element={<MyCars />} />
+          <Route path="cars/:id" element={<MyCar />}>
+            <Route index element={<MyCarInfo />} />
+            <Route path="pricing" element={<MyCarPricing />} />
+            <Route path="photos" element={<MyCarPhotos />} />
+          </Route>
+          <Route path="concierge" element={<Concierge />} />
+          <Route path="membership" element={<Membership />} />
         </Route>
-        <Route path="concierge" element={<Concierge />} />
-        <Route path="membership" element={<Membership />} />
       </Route>
-    </Route>
+      <Route path="*" element={<NotFound />} />
+    </>
   )
 );
 
