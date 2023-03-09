@@ -5,10 +5,15 @@ function Car() {
   const params = useParams();
   const [car, setCar] = useState(null);
   const location = useLocation();
+
   const filter = location.state && location.state.filter;
+  const model = location.state && location.state.model;
 
   const path = filter ? `..?${filter}` : "..";
-  const backBtnText = (location.state && location.state.model) || "all";
+
+  const modelCapitalized =
+    location.state && model[0].toUpperCase() + model.slice(1);
+  const backBtnText = (location.state && modelCapitalized) || "all";
 
   useEffect(() => {
     async function getData() {
