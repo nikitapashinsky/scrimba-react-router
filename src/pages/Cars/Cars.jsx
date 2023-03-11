@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useState } from "react";
+import { Link, useSearchParams, useLoaderData } from "react-router-dom";
 import { getData } from "../../api";
 import FilterButton from "../../components/FilterButton";
 
+export function loader() {
+  return getData();
+}
+
 function Cars() {
+  const cars = useLoaderData();
+
   const [searchParams, setSearchParams] = useSearchParams();
-  const [cars, setCars] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const modelFilter = searchParams.get("model");
@@ -16,21 +20,6 @@ function Cars() {
   const displayedCars = modelFilter
     ? cars.filter((car) => car.model.toLowerCase() === modelFilter)
     : cars;
-
-  useEffect(() => {
-    async function loadData() {
-      setLoading(true);
-      try {
-        const data = await getData();
-        setCars(data);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    loadData();
-  }, []);
 
   function handleNewFilter(key, value) {
     setSearchParams((prevParams) => {
@@ -42,14 +31,6 @@ function Cars() {
 
       return prevParams;
     });
-  }
-
-  if (loading) {
-    return (
-      <section className="flex h-full flex-col items-center justify-center p-6">
-        <p className="text-sm text-neutral-500">Loading…</p>
-      </section>
-    );
   }
 
   if (error) {

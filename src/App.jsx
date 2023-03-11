@@ -10,7 +10,7 @@ import "@fontsource/inter/variable.css";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Cars from "./pages/Cars/Cars";
+import Cars, { loader as carsLoader } from "./pages/Cars/Cars";
 import Car from "./pages/Cars/Car";
 import AccountLayout from "./components/AccountLayout";
 import Dashboard from "./pages/Account/Dashboard";
@@ -32,7 +32,7 @@ const router = createBrowserRouter(
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="cars" element={<Cars />} />
+        <Route path="cars" loader={carsLoader} element={<Cars />} />
         <Route path="cars/:id" element={<Car />} />
         <Route path="account" element={<AccountLayout />}>
           <Route index element={<Dashboard />} />
