@@ -21,6 +21,7 @@ import MyCar from "./pages/Account/MyCars/MyCar";
 import MyCarInfo from "./pages/Account/MyCars/MyCarInfo";
 import MyCarPricing from "./pages/Account/MyCars/MyCarPricing";
 import MyCarPhotos from "./pages/Account/MyCars/MyCarPhotos";
+import Error from "./components/Error";
 
 import NotFound from "./pages/404";
 
@@ -32,7 +33,12 @@ const router = createBrowserRouter(
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="cars" loader={carsLoader} element={<Cars />} />
+        <Route
+          path="cars"
+          element={<Cars />}
+          loader={carsLoader}
+          errorElement={<Error />}
+        />
         <Route path="cars/:id" element={<Car />} />
         <Route path="account" element={<AccountLayout />}>
           <Route index element={<Dashboard />} />

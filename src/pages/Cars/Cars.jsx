@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link, useSearchParams, useLoaderData } from "react-router-dom";
 import { getData } from "../../api";
 import FilterButton from "../../components/FilterButton";
@@ -11,7 +10,6 @@ function Cars() {
   const cars = useLoaderData();
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const [error, setError] = useState(null);
 
   const modelFilter = searchParams.get("model");
 
@@ -33,16 +31,16 @@ function Cars() {
     });
   }
 
-  if (error) {
-    return (
-      <section className="flex h-full flex-col items-center justify-center p-6">
-        <p className="max-w-sm text-center text-sm leading-normal text-neutral-500">
-          An error occurred while loading data. Please try refreshing the page,
-          or try again later.
-        </p>
-      </section>
-    );
-  }
+  // if (error) {
+  //   return (
+  //     <section className="flex h-full flex-col items-center justify-center p-6">
+  //       <p className="max-w-sm text-center text-sm leading-normal text-neutral-500">
+  //         An error occurred while loading data. Please try refreshing the page,
+  //         or try again later.
+  //       </p>
+  //     </section>
+  //   );
+  // }
 
   return (
     <section className="flex flex-col gap-12 p-6">
