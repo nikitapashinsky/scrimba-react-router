@@ -26,6 +26,7 @@ import Error from "./components/Error";
 import NotFound from "./pages/404";
 
 import "./server/server.js";
+import Login from "./pages/Login";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,6 +41,7 @@ const router = createBrowserRouter(
           errorElement={<Error />}
         />
         <Route path="cars/:id" element={<Car />} />
+        <Route path="login" element={<Login />} />
         <Route path="account" element={<AccountLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="cars" element={<MyCars />} />
