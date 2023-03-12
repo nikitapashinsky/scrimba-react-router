@@ -27,6 +27,7 @@ import NotFound from "./pages/404";
 
 import "./server/server.js";
 import Login from "./pages/Login";
+import AuthRequired from "./components/AuthRequired";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -42,16 +43,19 @@ const router = createBrowserRouter(
         />
         <Route path="cars/:id" element={<Car />} />
         <Route path="login" element={<Login />} />
+
         <Route path="account" element={<AccountLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="cars" element={<MyCars />} />
-          <Route path="cars/:id" element={<MyCar />}>
-            <Route index element={<MyCarInfo />} />
-            <Route path="pricing" element={<MyCarPricing />} />
-            <Route path="photos" element={<MyCarPhotos />} />
+          <Route element={<AuthRequired />}>
+            <Route index element={<Dashboard />} />
+            <Route path="cars" element={<MyCars />} />
+            <Route path="cars/:id" element={<MyCar />}>
+              <Route index element={<MyCarInfo />} />
+              <Route path="pricing" element={<MyCarPricing />} />
+              <Route path="photos" element={<MyCarPhotos />} />
+            </Route>
+            <Route path="concierge" element={<Concierge />} />
+            <Route path="membership" element={<Membership />} />
           </Route>
-          <Route path="concierge" element={<Concierge />} />
-          <Route path="membership" element={<Membership />} />
         </Route>
       </Route>
       <Route path="*" element={<NotFound />} />

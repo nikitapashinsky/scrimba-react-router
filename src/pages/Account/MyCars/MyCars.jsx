@@ -20,7 +20,7 @@ export default function MyCars() {
         {myCars &&
           myCars.map((car) => {
             return (
-              <Link to={car.id}>
+              <Link to={car.id} key={car.id}>
                 <img src={`/${car.id}.webp`} />
                 <h3 className="font-semibold">{car.name}</h3>
               </Link>

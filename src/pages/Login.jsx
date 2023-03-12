@@ -45,7 +45,7 @@ export default function Login() {
         />
         <button
           type="submit"
-          className="h-10 rounded-lg bg-neutral-800 text-sm font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2"
+          className="h-10 rounded-lg bg-neutral-800 text-sm font-medium text-white transition-colors hover:bg-neutral-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2"
         >
           Log in
         </button>
