@@ -4,7 +4,7 @@ export default function Error() {
   const error = useRouteError();
   console.log(error);
   return (
-    <section className="flex h-full max-w-sm flex-col justify-center gap-8 p-6">
+    <section className="mx-auto flex h-full max-w-sm flex-col items-center justify-center gap-8 p-6 text-center">
       <div className="flex flex-col gap-2">
         <h1 className="text-lg font-medium">{error.message}</h1>
         <p className="text-sm leading-normal text-neutral-500">
