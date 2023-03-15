@@ -30,17 +30,17 @@ function Nav() {
           </NavLink>
           <div className="block h-4 w-px bg-neutral-200"></div>
           <NavLink
-            to="/account"
+            to="/login"
             className={({ isActive }) =>
               isActive
                 ? "text-neutral-900 decoration-transparent underline-offset-2 transition-all hover:underline hover:decoration-neutral-900/30"
                 : "text-neutral-500 decoration-transparent underline-offset-2 transition-all hover:text-neutral-900 hover:underline hover:decoration-neutral-900/30"
             }
           >
-            Account
+            Log in
           </NavLink>
           <NavLink
-            to="/login"
+            to="/account"
             className={({ isActive }) =>
               isActive
                 ? "text-neutral-900 decoration-transparent underline-offset-2 transition-all hover:underline hover:decoration-neutral-900/30"

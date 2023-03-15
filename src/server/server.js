@@ -443,8 +443,8 @@ createServer({
     // this.timing = 2000;
 
     this.get("/cars", (schema) => {
-      return new Response(400, {}, { error: "Error fetching data" });
-      // return schema.cars.all();
+      // return new Response(400, {}, { error: "Error fetching data" });
+      return schema.cars.all();
     });
 
     this.get("/cars/:id", (schema, request) => {
@@ -459,6 +459,26 @@ createServer({
     this.get("/account/cars/:id", (schema, request) => {
       const id = request.params.id;
       return schema.cars.where({ id, hostId: "123" });
+    });
+
+    this.post("/login", (schema, request) => {
+      const { email, password } = JSON.parse(request.requestBody);
+
+      const foundUser = schema.users.findBy({ email, password });
+
+      if (!foundUser) {
+        return new Response(
+          401,
+          {},
+          { error: "No user found with these credentials." }
+        );
+      }
+
+      foundUser.password = undefined;
+      return {
+        user: foundUser,
+        token: "Token",
+      };
     });
   },
 });
