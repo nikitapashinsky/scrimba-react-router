@@ -3,6 +3,7 @@ import { createServer, Model, Response } from "miragejs";
 createServer({
   models: {
     cars: Model,
+    users: Model,
   },
 
   seeds(server) {
@@ -434,6 +435,13 @@ createServer({
         "Another place on the Cayenne model range starting grid has now been taken – with intense performance and precise dynamics. The Cayenne Turbo GT has all the attributes to be ahead of the game from the start.",
       img: "cayenne-turbo-gt",
       price: "$599 / week",
+    });
+
+    server.create("user", {
+      id: "1",
+      email: "john@example.com",
+      password: "1234",
+      name: "John",
     });
   },
 

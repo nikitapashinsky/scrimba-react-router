@@ -12,7 +12,7 @@ export async function getData() {
 }
 
 export async function loginUser(creds) {
-  const response = await fetch("/login", {
+  const response = await fetch("/api/login", {
     method: "post",
     body: JSON.stringify(creds),
   });
