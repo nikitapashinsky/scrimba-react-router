@@ -467,7 +467,7 @@ createServer({
         return new Response(
           401,
           {},
-          { error: "No user found with these credentials." }
+          { message: "No user found with these credentials." }
         );
       }
 

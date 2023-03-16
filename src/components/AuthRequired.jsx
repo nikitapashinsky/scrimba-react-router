@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 
 export default function AuthRequired() {
-  const auth = { token: null };
+  const auth = { token: "token" };
 
   if (!auth.token) {
     return (

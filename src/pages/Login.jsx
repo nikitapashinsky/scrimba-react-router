@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { loginUser } from "../api";
 
 export default function Login() {
@@ -8,7 +8,11 @@ export default function Login() {
     password: "",
   });
 
+  const [status, setStatus] = useState("idle");
+  const [error, setError] = useState(null);
+
   const location = useLocation();
+  const navigate = useNavigate();
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -20,8 +24,17 @@ export default function Login() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(loginFormData);
-    loginUser(loginFormData).then((data) => console.log(data));
+    setStatus("submitting");
+    setError(null);
+    loginUser(loginFormData)
+      .then((data) => {
+        console.log(data);
+        navigate("/account/");
+      })
+      .catch((err) => {
+        setError(err);
+      })
+      .finally(() => setStatus("idle"));
   }
 
   return (
@@ -47,6 +60,7 @@ export default function Login() {
       )}
       <section className="flex h-full flex-col items-center justify-center gap-6 p-6">
         <h1 className="text-lg font-medium">Log in to Ferdinand</h1>
+        {error && <p className="text-sm text-red-700">{error.message}</p>}
         <form
           onSubmit={handleSubmit}
           className="flex w-full max-w-xs flex-col gap-3"
@@ -69,7 +83,8 @@ export default function Login() {
           />
           <button
             type="submit"
-            className="h-10 rounded-lg bg-neutral-800 text-sm font-medium text-white transition-colors hover:bg-neutral-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2"
+            disabled={status === "submitting"}
+            className="h-10 rounded-lg bg-neutral-800 text-sm font-medium text-white transition-colors hover:bg-neutral-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 disabled:bg-neutral-200"
           >
             Log in
           </button>
