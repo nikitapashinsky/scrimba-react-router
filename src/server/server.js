@@ -269,10 +269,7 @@ createServer({
       drive: "All wheel drive",
       fuelType: "Gasoline",
       description: `
-        Can a vision be logical? Is it even allowed to be? Probably not. We believe that the more visionary an idea at the start, the more exciting it is at the end. Then it's worth fighting for. That was the case with the Panamera. A sports car for four? With impressive performance and great comfort?
-
-        With the dynamism typical of Porsche and simultaneously more efficient? Many said it was impossible. Others called it brave.
-        `,
+        Can a vision be logical? Is it even allowed to be? Probably not. We believe that the more visionary an idea at the start, the more exciting it is at the end. Then it's worth fighting for. That was the case with the Panamera.`,
       img: "panamera-4s",
     });
     server.create("car", {
@@ -285,10 +282,7 @@ createServer({
       drive: "All wheel drive",
       fuelType: "Gasoline",
       description: `
-        Can a vision be logical? Is it even allowed to be? Probably not. We believe that the more visionary an idea at the start, the more exciting it is at the end. Then it's worth fighting for. That was the case with the Panamera. A sports car for four? With impressive performance and great comfort?
-
-        With the dynamism typical of Porsche and simultaneously more efficient? Many said it was impossible. Others called it brave.
-        `,
+        Can a vision be logical? Is it even allowed to be? Probably not. We believe that the more visionary an idea at the start, the more exciting it is at the end. Then it's worth fighting for. That was the case with the Panamera.`,
       img: "panamera-4s-executive",
       price: "$599 / week",
     });
@@ -301,10 +295,7 @@ createServer({
       seats: "4-5",
       drive: "All wheel drive",
       fuelType: "Hybrid",
-      description: `
-        Whether Panamera, Panamera Executive or Panamera Sport Turismo – the silhouette and proportions are unmistakably Porsche. Athletic, streamlined, with clear contours and powerful muscles.
-
-        The long wheelbase, shorter overhang at the front and longer overhang at the rear already lend visual dynamism. The prominent sculpting of the side profile creates the customary Porsche waistline and sense of lightness.`,
+      description: `Top endurance athletes – high-end performance meets comfort. The Panamera E-Hybrid models transform travel into sporting events, business into pure pleasure and will change your perception of hybrid technology. Just as it will your everyday life.`,
       img: "panamera-turbo-s-ehybrid",
       price: "$599 / week",
     });
@@ -318,9 +309,7 @@ createServer({
       drive: "All wheel drive",
       fuelType: "Gasoline",
       description: `
-        The fact that four people can appreciate a sporty yet comfortable drive in the Panamera is already old news in the automotive luxury class. In the Sport Turismo, with the standard 4+1 seat concept, a fifth person can enjoy the Panamera driving experience. Although not designed as a full-size individual seat, the extra space does provide a neat solution for carrying an additional passenger on short to medium distance trips.
-
-        The fact that stylish design and everyday practicality are not mutually exclusive is demonstrated by the large tailgate and the low loading edge, which makes it easier to integrate more than just everyday things into the Panamera Sport Turismo. Thanks, above all, to – for a sports car – an extraordinary capacity of up to 1,384 litres.`,
+        The fact that four people can appreciate a sporty yet comfortable drive in the Panamera is already old news in the automotive luxury class. In the Sport Turismo, with the standard 4+1 seat concept, a fifth person can enjoy the Panamera driving experience.`,
       img: "panamera-turbo-s-sport-turismo",
       price: "$599 / week",
     });
