@@ -28,8 +28,8 @@ export default function Login() {
     setError(null);
     loginUser(loginFormData)
       .then((data) => {
-        console.log(data);
-        navigate("/account/");
+        localStorage.setItem("loggedIn", true);
+        navigate("/account", { replace: true });
       })
       .catch((err) => {
         setError(err);
