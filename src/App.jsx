@@ -26,7 +26,7 @@ import Error from "./components/Error";
 import NotFound from "./pages/404";
 
 import "./server/server.js";
-import Login from "./pages/Login";
+import Login, { action as loginAction } from "./pages/Login";
 import AuthRequired from "./components/AuthRequired";
 
 const router = createBrowserRouter(
@@ -42,7 +42,7 @@ const router = createBrowserRouter(
           errorElement={<Error />}
         />
         <Route path="cars/:id" element={<Car />} />
-        <Route path="login" element={<Login />} />
+        <Route path="login" element={<Login />} action={loginAction} />
 
         <Route path="account" element={<AccountLayout />}>
           <Route element={<AuthRequired />}>

@@ -1,42 +1,35 @@
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import {
+  useLocation,
+  useNavigate,
+  Form,
+  useActionData,
+} from "react-router-dom";
 import { loginUser } from "../api";
 
-export default function Login() {
-  const [loginFormData, setLoginFormData] = useState({
-    email: "",
-    password: "",
-  });
+export async function action({ request }) {
+  const formData = await request.formData();
+  const email = formData.get("email");
+  const password = formData.get("password");
+  const data = await loginUser({ email, password });
+  localStorage.setItem("loggedIn", true);
 
+  return data;
+}
+
+export default function Login() {
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
 
   const location = useLocation();
   const navigate = useNavigate();
-
+  // Receive data from action
+  const data = useActionData();
+  // Send the user to the page they were trying to access
   const from = location.state?.from?.pathname || "/account";
 
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setLoginFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    setStatus("submitting");
-    setError(null);
-    loginUser(loginFormData)
-      .then(() => {
-        localStorage.setItem("loggedIn", true);
-        navigate(from, { replace: true });
-      })
-      .catch((err) => {
-        setError(err);
-      })
-      .finally(() => setStatus("idle"));
+  if (data?.token) {
+    navigate(from, { replace: true });
   }
 
   return (
@@ -63,23 +56,20 @@ export default function Login() {
       <section className="flex h-full flex-col items-center justify-center gap-6 p-6">
         <h1 className="text-lg font-medium">Log in to Ferdinand</h1>
         {error && <p className="text-sm text-red-700">{error.message}</p>}
-        <form
-          onSubmit={handleSubmit}
+        <Form
+          action="/login"
+          method="post"
           className="flex w-full max-w-xs flex-col gap-3"
         >
           <input
             type="email"
             name="email"
-            onChange={handleChange}
-            value={loginFormData.email}
             placeholder="Email address…"
             className="h-10 rounded-lg border-neutral-300 text-sm placeholder-neutral-400 focus:border-neutral-500 focus:ring-2 focus:ring-neutral-100"
           />
           <input
             type="password"
             name="password"
-            onChange={handleChange}
-            value={loginFormData.password}
             placeholder="Password…"
             className="h-10 rounded-lg border-neutral-300 text-sm placeholder-neutral-400 focus:border-neutral-500 focus:ring-2 focus:ring-neutral-100"
           />
@@ -90,7 +80,7 @@ export default function Login() {
           >
             Log in
           </button>
-        </form>
+        </Form>
       </section>
     </>
   );
