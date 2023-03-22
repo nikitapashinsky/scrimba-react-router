@@ -14,6 +14,8 @@ export default function Login() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const from = location.state?.from?.pathname || "/account";
+
   function handleChange(e) {
     const { name, value } = e.target;
     setLoginFormData((prev) => ({
@@ -27,9 +29,9 @@ export default function Login() {
     setStatus("submitting");
     setError(null);
     loginUser(loginFormData)
-      .then((data) => {
+      .then(() => {
         localStorage.setItem("loggedIn", true);
-        navigate("/account", { replace: true });
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         setError(err);
