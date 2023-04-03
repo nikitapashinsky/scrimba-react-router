@@ -7,12 +7,11 @@ import {
 
 import "@fontsource/inter/variable.css";
 
-import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Cars, { loader as carsLoader } from "./pages/Cars/Cars";
 import Car from "./pages/Cars/Car";
-import AccountLayout from "./components/AccountLayout";
+import Login, { action as loginAction } from "./pages/Login";
 import Dashboard from "./pages/Account/Dashboard";
 import Membership from "./pages/Account/Membership";
 import Concierge from "./pages/Account/Concierge";
@@ -21,13 +20,13 @@ import MyCar from "./pages/Account/MyCars/MyCar";
 import MyCarInfo from "./pages/Account/MyCars/MyCarInfo";
 import MyCarPricing from "./pages/Account/MyCars/MyCarPricing";
 import MyCarPhotos from "./pages/Account/MyCars/MyCarPhotos";
+import NotFound from "./pages/404";
+import Layout from "./components/Layout";
+import AccountLayout from "./components/AccountLayout";
+import AuthRequired from "./components/AuthRequired";
 import Error from "./components/Error";
 
-import NotFound from "./pages/404";
-
 import "./server/server.js";
-import Login, { action as loginAction } from "./pages/Login";
-import AuthRequired from "./components/AuthRequired";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import {
+  Form,
+  redirect,
   useLocation,
   useNavigate,
-  Form,
   useActionData,
 } from "react-router-dom";
 import { loginUser } from "../api";
@@ -14,7 +15,7 @@ export async function action({ request }) {
   const data = await loginUser({ email, password });
   localStorage.setItem("loggedIn", true);
 
-  return data;
+  return redirect("/account");
 }
 
 export default function Login() {
@@ -23,8 +24,10 @@ export default function Login() {
 
   const location = useLocation();
   const navigate = useNavigate();
+
   // Receive data from action
   const data = useActionData();
+
   // Send the user to the page they were trying to access
   const from = location.state?.from?.pathname || "/account";
 
